@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-[#050505] text-white;
+  }
+}
+
+@layer utilities {
+  .display-heavy {
+    font-size: clamp(5rem, 15vw, 12rem);
+    line-height: 0.82;
+    letter-spacing: -0.04em;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  
+  .text-micro {
+    @apply text-[10px] uppercase font-bold tracking-[0.2em] text-white/50;
+  }
+
+  .input-underline {
+    @apply bg-transparent border-t-0 border-x-0 border-b border-white/20 focus:border-white focus:ring-0 transition-colors rounded-none px-0;
+  }
+}
